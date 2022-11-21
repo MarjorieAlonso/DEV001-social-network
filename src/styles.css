@@ -1,4 +1,56 @@
+*{
+    box-sizing: border-box;
+}
 h1 {
     font-family: 'Press Start 2P', cursive;
-    
+    color: yellow;
+    text-align: center;
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    display: flex;
+    border-radius: 100%;
+    width: 20rem;
+    height: 20rem;
+}
+#entrar{
+    margin-top: 17px;
+    display: flex;
+    background-color:cornflowerblue;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    padding: 7px;
+    flex-direction: column;
+    border-style: none;
+}
+#registrarme{
+    display: flex;
+    background-color:cornflowerblue;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    padding:7px;
+    flex-direction: column;
+    border-style: none;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+#google{
+    display: flex;
+    color: white;
+    background-color:cornflowerblue;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    padding: 3px;
+    flex-direction: column;
+    border-style: none;
+}
+.botones{
+    display: flex;
+    flex-flow: column;
+    width: 15%;
 }
