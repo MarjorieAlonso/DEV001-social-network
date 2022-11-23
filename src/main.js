@@ -1,4 +1,5 @@
 import './firebase.js'
+import { showRegister } from './register.js';
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
 
@@ -32,13 +33,17 @@ const showLogin = function () {
             </form>
               <div class="login-signup">
                <span class= "text">Aún no te registras?
-                <a href="#" class="signup-text">Registrarme</a>
+                <a href="#" class="signup-text" id="signup">Registrarme</a>
                </span>
               </div>
             </div>  
         </div>
     </div>`;
   document.getElementById('root').innerHTML = templateFormulario;
+  const signUp = document.getElementById('signup');
+  signUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    showRegister();
+  });
 };
 showLogin();
-
