@@ -126,3 +126,7 @@ header{
     display:flex;
    justify-content: center;
 }
+.form .login-signup{
+    margin-top: 15px;
+    text-align: center;
+}

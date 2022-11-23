@@ -4,7 +4,8 @@ import './firebase.js'
 
 // myFunction();
 
-let showLogin = function () {
+// eslint-disable-next-line func-names
+const showLogin = function () {
   const templateFormulario = `
     <div class= "container">
       <img src="claqueta.png" class="claqueta" alt="claqueta">
