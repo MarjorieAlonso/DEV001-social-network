@@ -1,5 +1,6 @@
 import './firebase.js';
 import { showRegister } from './register.js';
+import { showMuro } from './muro.js';
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
 
@@ -18,6 +19,9 @@ const showLogin = function () {
                 <input type= "text" placeholder= "Ingresa tu mail" required></input>
                 </div>
             <div class= "input-field">
+            <span class = "icon-eye">
+            <i class="fa-solid fa-eye"></i>
+            <span>
                 <input type= "text" placeholder="Ingresa tu contraseña" required></input>
             </div>
             <div class= "check-box-text">
@@ -28,7 +32,7 @@ const showLogin = function () {
              <a href="#" class="text">Olvidaste tu contraseña?</a>
             </div> 
              <div class= "input-field-button">
-              <input type= "button" value="Entrar">
+              <input type= "button"  id ="botonEntrar" value="Entrar">
              </div> 
             </form>
               <div class="login-signup">
@@ -47,3 +51,8 @@ const showLogin = function () {
   });
 };
 showLogin();
+const muro = document.getElementById('botonEntrar');
+muro.addEventListener('click', (event) => {
+  event.preventDefault();
+  showMuro();
+});
