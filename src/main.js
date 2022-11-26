@@ -1,4 +1,4 @@
-import './firebase.js'
+import './firebase.js';
 import { showRegister } from './register.js';
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';

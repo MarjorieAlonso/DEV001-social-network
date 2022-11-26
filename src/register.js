@@ -1,6 +1,4 @@
-import './firebase.js'
-
-
+import './firebase.js';
 // eslint-disable-next-line func-names
 export const showRegister = function () {
   const templateFormRegister = `
