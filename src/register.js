@@ -2,7 +2,6 @@ import './firebase.js';
 import { showMuro } from './muro.js';
 //import { signup } from './auth.js';
 
-
 // eslint-disable-next-line func-names
 export const showRegister = function () {
   const templateFormRegister = `
@@ -43,3 +42,4 @@ export const showRegister = function () {
   showRegister();
 };
 
+showRegister();
