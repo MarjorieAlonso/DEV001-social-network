@@ -7,7 +7,7 @@ import { showMuro } from './muro.js';
 // myFunction();
 
 // eslint-disable-next-line func-names
-const showLogin = function () {
+export const showLogin = function () {
   const templateFormulario = `
     <div class= "container">
       <img src="claqueta.png" class="claqueta" alt="claqueta">
@@ -49,6 +49,7 @@ const showLogin = function () {
     e.preventDefault();
     showRegister();
   });
+  history.pushState
 };
 showLogin();
 const muro = document.getElementById('botonEntrar');
