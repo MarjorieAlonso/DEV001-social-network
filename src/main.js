@@ -49,7 +49,8 @@ export const showLogin = function () {
     e.preventDefault();
     showRegister();
   });
-  history.pushState
+  // eslint-disable-next-line no-restricted-globals
+  history.pushState(null, null, '#Login');
 };
 showLogin();
 const muro = document.getElementById('botonEntrar');

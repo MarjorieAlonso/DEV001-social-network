@@ -11,5 +11,7 @@ export const showMuro = function () {
 <button class="botonM">me gusta</button>
 </div> `;
   document.getElementById('root').innerHTML = templatePrincipal;
+  // eslint-disable-next-line no-restricted-globals
+  history.pushState(null, null, '#Muro');
 };
 showMuro();

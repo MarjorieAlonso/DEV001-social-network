@@ -1,6 +1,6 @@
 import './firebase.js';
 import { showMuro } from './muro.js';
-//import { signup } from './auth.js';
+// import { signup } from './auth.js';
 
 // eslint-disable-next-line func-names
 export const showRegister = function () {
@@ -33,13 +33,12 @@ export const showRegister = function () {
         </div>
     </div>`;
   document.getElementById('root').innerHTML = templateFormRegister;
-  const directMuro = document.getElementById('botonEntrar'); 
-   directMuro.addEventListener('submit', (event) => {
+  const directMuro = document.getElementById('botonRegistrar');
+  directMuro.addEventListener('click', (event) => {
     event.preventDefault();
     showMuro();
-  }); 
-
-  showRegister();
+  });
+  // eslint-disable-next-line no-restricted-globals
+  history.pushState(null, null, '#Signup');
 };
-
 showRegister();
