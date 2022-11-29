@@ -42,3 +42,4 @@ export const showRegister = function () {
   history.pushState(null, null, '#Signup');
 };
 showRegister();
+
