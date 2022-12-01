@@ -58,4 +58,3 @@ muro.addEventListener('click', (event) => {
   event.preventDefault();
   showMuro();
 });
-
