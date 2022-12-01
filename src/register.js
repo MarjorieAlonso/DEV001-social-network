@@ -1,5 +1,7 @@
 import './firebase.js';
-import { showMuro } from './muro.js';
+// import { createUserWithEmailAndPassword } from './firebase.js';
+import { signup } from './auth.js';
+
 // import { signup } from './auth.js';
 
 // eslint-disable-next-line func-names
@@ -9,7 +11,7 @@ export const showRegister = function () {
         <div class= "form">
             <div class= "form-login">
             <span class= title>Sign Up</span>
-            <form action="#">
+            <form action="#" id="login-form">
                 <div class= "input-field">
                 <input type= "text" id="userName"placeholder= "Nombre de Usuario" required></input>
                 </div>
@@ -33,13 +35,16 @@ export const showRegister = function () {
         </div>
     </div>`;
   document.getElementById('root').innerHTML = templateFormRegister;
-  const directMuro = document.getElementById('botonRegistrar');
-  directMuro.addEventListener('click', (event) => {
-    event.preventDefault();
-    showMuro();
-  });
+  // event listener para el boton
+  const signupForm = document.querySelector('#login-form');
+  document.getElementById('botonRegistrar').addEventListener('click', function(e){
+   e.preventDefault ();
+  const userName = signupForm ['userName'].value;
+   const email = signupForm ['correo'].value;
+   const password = signupForm ['creaCont'].value;
+    signup (email, password);
+});
   // eslint-disable-next-line no-restricted-globals
   history.pushState(null, null, '#Signup');
 };
 showRegister();
-
