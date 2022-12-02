@@ -1,4 +1,4 @@
-import '../firebase.js';
+import '../lib/firebase.js';
 
 // eslint-disable-next-line func-names
 export const showMuro = function () {

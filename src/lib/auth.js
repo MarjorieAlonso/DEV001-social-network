@@ -1,5 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { app } from '../firebase.js';
+import { app } from './firebase.js';
+//import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 export const auth = getAuth(app);
 export const signup = (email, password) => {
@@ -24,3 +25,4 @@ export const signup = (email, password) => {
       }
     });
 };
+

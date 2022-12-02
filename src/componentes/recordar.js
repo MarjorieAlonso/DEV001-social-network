@@ -1,4 +1,4 @@
-import '../firebase.js';
+import '../lib/firebase.js';
 
 export const showReset = function() {
   const templateReset = `
