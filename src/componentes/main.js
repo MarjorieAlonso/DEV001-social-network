@@ -1,6 +1,8 @@
-import '../firebase.js';
+import '../lib/firebase.js';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
+import { GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
+import { auth } from '../lib/auth.js';
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
 
@@ -10,7 +12,7 @@ import { showMuro } from './muro.js';
 export const showLogin = function () {
   const templateFormulario = `
     <div class= "container">
-      <img src="claqueta.png" class="claqueta" alt="claqueta">
+      <img src="images/claqueta.png" class="claqueta" alt="claqueta">
         <div class= "form">
             <div class= "form-login">
             <span class= title>Login</span>
@@ -38,6 +40,9 @@ export const showLogin = function () {
               <div class="login-signup">
                <span class= "text">Aún no te registras?
                 <a href="#" class="signup-text" id="signup">Registrarme</a>
+                <div class="buttonGoogle">
+                <input type="button" class="registroGoogle" id="botonGoogle" value="Entrar con Google">
+                </div>
                </span>
               </div>
             </div>  
@@ -58,3 +63,14 @@ muro.addEventListener('click', (event) => {
   event.preventDefault();
   showMuro();
 });
+  //EventListener para el boton de inicio con Google
+  const registerGoogle = document.querySelector('#botonGoogle')
+  registerGoogle.addEventListener('click', async () =>{
+     const provider = new GoogleAuthProvider();
+     try{
+     const credentials= await signInWithPopup(auth, provider)
+     } catch (error){
+      console.log(error)
+     }
+     showMuro();
+  });
