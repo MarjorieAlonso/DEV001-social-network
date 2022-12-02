@@ -1,6 +1,6 @@
-import { showLogin } from './main.js';
-import { showMuro } from './muro.js';
-import { showRegister } from './register.js';
+import { showLogin } from './componentes/main.js';
+import { showMuro } from './componentes/muro.js';
+import { showRegister } from './componentes/register.js';
 
 export const Router = () => {
   // eslint-disable-next-line no-restricted-globals

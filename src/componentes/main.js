@@ -1,4 +1,4 @@
-import './firebase.js';
+import '../firebase.js';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
 // Este es el punto de entrada de tu aplicacion

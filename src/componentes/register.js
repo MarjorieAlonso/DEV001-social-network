@@ -1,6 +1,6 @@
-import './firebase.js';
+import '../firebase.js';
 // import { createUserWithEmailAndPassword } from './firebase.js';
-import { signup } from './auth.js';
+import { signup } from '/componentes/auth.js';
 
 // import { signup } from './auth.js';
 
