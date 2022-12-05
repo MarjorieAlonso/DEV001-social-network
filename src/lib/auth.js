@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { app } from './firebase.js';
 //import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
@@ -25,4 +25,20 @@ export const signup = (email, password) => {
       }
     });
 };
-
+export const auth2 = getAuth(app);
+export const singin= (email,password) =>{
+  signInWithEmailAndPassword(auth2, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+   if (errorCode.includes('auth/invalid-email')){
+    alert ('este correo no existe');
+   }
+   if(errorCode.includes('auth/wrong-password')){
+    alert('contraseña incorrecta');
+   }
+  });
+};

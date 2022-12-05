@@ -1,8 +1,9 @@
 import '../lib/firebase.js';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
-import { GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
-import { auth } from '../lib/auth.js';
+import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword} from 'firebase/auth';
+import { auth, auth2 } from '../lib/auth.js';
+import { async } from 'regenerator-runtime';
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
 
@@ -16,15 +17,15 @@ export const showLogin = function () {
         <div class= "form">
             <div class= "form-login">
             <span class= title>Login</span>
-            <form action="#">
+            <form action="#" class="login-form">
                 <div class= "input-field">
-                <input type= "text" placeholder= "Ingresa tu mail" required></input>
+                <input type= "text" id="correo" placeholder= "Ingresa tu mail" required></input>
                 </div>
             <div class= "input-field">
             <span class = "icon-eye">
             <i class="fa-solid fa-eye"></i>
             <span>
-                <input type= "text" placeholder="Ingresa tu contraseña" required></input>
+                <input type= "text" id="contraseña" placeholder="Ingresa tu contraseña" required></input>
             </div>
             <div class= "check-box-text">
              <div class= "check-box-content">
@@ -58,9 +59,16 @@ export const showLogin = function () {
   history.pushState(null, null, '#Login');
 };
 showLogin();
-const muro = document.getElementById('botonEntrar');
-muro.addEventListener('click', (event) => {
-  event.preventDefault();
+const sigInForm = document.querySelector('.login-form');
+document.getElementById('botonEntrar').addEventListener('click', async ()=>{
+  const email= sigInForm['correo'].value;
+  const password= sigInForm['contraseña'].value;
+ try {
+  const credentials= await signInWithEmailAndPassword(auth,email,password)
+  //console.log(credentials)
+ } catch(error){
+  //console.log(error)
+ }
   showMuro();
 });
   //EventListener para el boton de inicio con Google
@@ -70,7 +78,9 @@ muro.addEventListener('click', (event) => {
      try{
      const credentials= await signInWithPopup(auth, provider)
      } catch (error){
-      console.log(error)
+      //console.log(error)
      }
      showMuro();
   });
+  //priorizar funciones que no tengan que ver con el DOM 
+  //then y catch
