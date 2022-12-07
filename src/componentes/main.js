@@ -1,13 +1,10 @@
 import '../lib/firebase.js';
+import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
-import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword} from 'firebase/auth';
 import { auth, auth2 } from '../lib/auth.js';
-import { async } from 'regenerator-runtime';
-// Este es el punto de entrada de tu aplicacion
-// import { myFunction } from './lib/index.js';
+ import { async } from 'regenerator-runtime';
 
-// myFunction();
 
 // eslint-disable-next-line func-names
 export const showLogin = function () {
@@ -60,14 +57,14 @@ export const showLogin = function () {
 };
 showLogin();
 const sigInForm = document.querySelector('.login-form');
-document.getElementById('botonEntrar').addEventListener('click', async ()=>{
-  const email= sigInForm['correo'].value;
-  const password= sigInForm['contraseña'].value;
+document.getElementById('botonEntrar').addEventListener('click', async () => {
+  const email = sigInForm['correo'].value;
+  const password = sigInForm['contraseña'].value;
  try {
-  const credentials= await signInWithEmailAndPassword(auth,email,password)
-  //console.log(credentials)
- } catch(error){
-  //console.log(error)
+  const credentials= await signInWithEmailAndPassword(auth, email, password)
+
+} catch (error){
+
  }
   showMuro();
 });
@@ -76,7 +73,7 @@ document.getElementById('botonEntrar').addEventListener('click', async ()=>{
   registerGoogle.addEventListener('click', async () =>{
      const provider = new GoogleAuthProvider();
      try{
-     const credentials= await signInWithPopup(auth, provider)
+     const credentials= await signInWithPopup(auth, provider);
      } catch (error){
       //console.log(error)
      }

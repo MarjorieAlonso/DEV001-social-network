@@ -1,6 +1,6 @@
 import '../lib/firebase.js';
 
-export const showReset = function() {
+export const showReset = function () {
   const templateReset = `
 <div class= "container">
         <div class= "form">
