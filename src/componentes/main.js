@@ -2,7 +2,7 @@ import '../lib/firebase.js';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
 import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword} from 'firebase/auth';
-import { auth, auth2 } from '../lib/auth.js';
+import { auth, singin } from '../lib/auth.js';
 import { async } from 'regenerator-runtime';
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
@@ -59,28 +59,30 @@ export const showLogin = function () {
   history.pushState(null, null, '#Login');
 };
 showLogin();
+//LOGIN NORMAL
 const sigInForm = document.querySelector('.login-form');
 document.getElementById('botonEntrar').addEventListener('click', async ()=>{
   const email= sigInForm['correo'].value;
   const password= sigInForm['contraseña'].value;
- try {
-  const credentials= await signInWithEmailAndPassword(auth,email,password)
-  //console.log(credentials)
- } catch(error){
-  //console.log(error)
- }
-  showMuro();
+  try {
+    const credentials= await signInWithEmailAndPassword(auth,email,password)
+   } catch(error){
+    //console.log(error)
+   }
+   singin(email,password);
 });
-  //EventListener para el boton de inicio con Google
+
+  //LOGIN CON GOOGLE
   const registerGoogle = document.querySelector('#botonGoogle')
   registerGoogle.addEventListener('click', async () =>{
      const provider = new GoogleAuthProvider();
      try{
      const credentials= await signInWithPopup(auth, provider)
-     } catch (error){
-      //console.log(error)
-     }
      showMuro();
+     //console.log(credentials);
+     } catch (error){
+      console.error(error);
+     }
   });
   //priorizar funciones que no tengan que ver con el DOM 
   //then y catch
