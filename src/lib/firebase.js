@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// eslint-disable-next-line no-unused-vars
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 // import { signInWithPopup } from "firebase/auth";
 

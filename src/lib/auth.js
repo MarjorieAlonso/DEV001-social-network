@@ -7,6 +7,7 @@ export const signup = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
+      // eslint-disable-next-line no-unused-vars
       const user = userCredential.user;
       // eslint-disable-next-line no-alert
       alert('Bienvenido a Recomiendame la movie');
@@ -19,9 +20,11 @@ export const signup = (email, password) => {
         alert('este mail ya se encuentra registrado');
       }
       if (errorCode.includes('auth/internal-error')) {
+        // eslint-disable-next-line no-alert
         alert('correo invalido');
       }
       if (errorCode.includes('auth/weak-password')) {
+        // eslint-disable-next-line no-alert
         alert('la contraseña debe tener al menos 6 caracteres');
       }
     });
@@ -31,6 +34,7 @@ export const singin = (email, password) => {
   signInWithEmailAndPassword(auth2, email, password)
     .then((userCredential) => {
       // Signed in
+      // eslint-disable-next-line no-unused-vars
       const user = userCredential.user;
     })
     .catch((error) => {

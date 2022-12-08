@@ -1,5 +1,6 @@
 import '../lib/firebase.js';
 
+// eslint-disable-next-line func-names
 export const showReset = function () {
   const templateReset = `
 <div class= "container">
@@ -25,4 +26,5 @@ export const showReset = function () {
   });
 };
 
+// eslint-disable-next-line no-undef
 showRegister();

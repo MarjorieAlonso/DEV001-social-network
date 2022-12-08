@@ -1,10 +1,8 @@
 import '../lib/firebase.js';
-import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
-import { auth, auth2 } from '../lib/auth.js';
- import { async } from 'regenerator-runtime';
-
+import { auth } from '../lib/auth.js';
 
 // eslint-disable-next-line func-names
 export const showLogin = function () {
@@ -58,26 +56,30 @@ export const showLogin = function () {
 showLogin();
 const sigInForm = document.querySelector('.login-form');
 document.getElementById('botonEntrar').addEventListener('click', async () => {
-  const email = sigInForm['correo'].value;
+  //  no-unused-vars
+  // eslint-disable-next-line no-unused-vars
+  const email = sigInForm.correo.value;
+
+  // eslint-disable-next-line no-unused-vars
   const password = sigInForm['contraseña'].value;
- try {
-  const credentials= await signInWithEmailAndPassword(auth, email, password)
+  try {
+  // const credentials = await signInWithEmailAndPassword(auth, email, password);
 
-} catch (error){
-
- }
+  } catch (error) { /* empty */
+  }
   showMuro();
 });
-  //EventListener para el boton de inicio con Google
-  const registerGoogle = document.querySelector('#botonGoogle')
-  registerGoogle.addEventListener('click', async () =>{
-     const provider = new GoogleAuthProvider();
-     try{
-     const credentials= await signInWithPopup(auth, provider);
-     } catch (error){
-      //console.log(error)
-     }
-     showMuro();
-  });
-  //priorizar funciones que no tengan que ver con el DOM 
-  //then y catch
+// EventListener para el boton de inicio con Google
+const registerGoogle = document.querySelector('#botonGoogle');
+registerGoogle.addEventListener('click', async () => {
+  const provider = new GoogleAuthProvider();
+  try {
+    // eslint-disable-next-line no-unused-vars
+    const credentials = await signInWithPopup(auth, provider);
+  } catch (error) {
+    // console.log(error)
+  }
+  showMuro();
+});
+// priorizar funciones que no tengan que ver con el DOM
+// then y catch
