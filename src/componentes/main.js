@@ -91,7 +91,8 @@ registerGoogle.addEventListener('click', async () => {
   // eslint-disable-next-line no-unused-vars
   const provider = new GoogleAuthProvider();
   try {
-    // const credentials= await signInWithPopup(auth, provider)
+    // eslint-disable-next-line no-unused-vars
+    const credentials = await signInWithPopup(auth, provider);
     showMuro();
   // eslint-disable-next-line no-empty
   } catch (error) {
