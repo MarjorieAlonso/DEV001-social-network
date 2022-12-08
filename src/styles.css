@@ -155,8 +155,12 @@ justify-content: center;
     padding: 5px;
 }
 .icon-eye{
-    color:black;
-   right:0%;
+   color:black;
+   position: absolute;
+   right: 0;
+   top: 25%;
+   transform: translate(-50%);
+   cursor: pointer;
    
 } 
 

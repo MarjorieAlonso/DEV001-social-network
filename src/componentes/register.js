@@ -1,10 +1,10 @@
 import '../lib/firebase.js';
 // import { createUserWithEmailAndPassword } from './firebase.js';
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved, no-unused-vars
 import { signup, auth } from '../lib/auth.js';
-//import { GoogleAuthProvider,signInWithPopup} from 'firebase/auth';
+// import { GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
+// eslint-disable-next-line no-unused-vars
 import { showMuro } from './muro.js';
-
 
 // eslint-disable-next-line func-names
 export const showRegister = function () {
@@ -41,17 +41,15 @@ export const showRegister = function () {
 
   // EventListener para el boton de Registrar
   const signupForm = document.querySelector('#login-form');
-  document.getElementById('botonRegistrar').addEventListener('click', function(e){
-   e.preventDefault ();
-  const userName = signupForm ['userName'].value;
-   const email = signupForm ['correo'].value;
-   const password = signupForm ['creaCont'].value;
-    signup (email, password);
-});
+  document.getElementById('botonRegistrar').addEventListener('click', (e) => {
+    e.preventDefault();
+    // eslint-disable-next-line no-unused-vars
+    const userName = signupForm.userName.value;
+    const email = signupForm.correo.value;
+    const password = signupForm.creaCont.value;
+    signup(email, password);
+  });
   // eslint-disable-next-line no-restricted-globals
   history.pushState(null, null, '#Signup');
-
-
-
 };
 showRegister();
