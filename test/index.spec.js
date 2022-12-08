@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import { signup } from '../lib/auth.js';
+import { signup } from '../src/lib/auth.js';
 
 jest.mock('firebase/auth');
 jest.mock(signup);
