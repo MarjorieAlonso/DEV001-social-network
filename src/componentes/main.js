@@ -1,8 +1,22 @@
 import '../lib/firebase.js';
+<<<<<<< HEAD
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
 import { auth } from '../lib/auth.js';
+=======
+// eslint-disable-next-line no-unused-vars
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { showRegister } from './register.js';
+import { showMuro } from './muro.js';
+// eslint-disable-next-line no-unused-vars
+import { auth, singin } from '../lib/auth.js';
+
+// Este es el punto de entrada de tu aplicacion
+// import { myFunction } from './lib/index.js';
+
+// myFunction();
+>>>>>>> e29d663d54b9e72570689fff83b6aa644a868dfc
 
 // eslint-disable-next-line func-names
 export const showLogin = function () {
@@ -17,10 +31,11 @@ export const showLogin = function () {
                 <input type= "text" id="correo" placeholder= "Ingresa tu mail" required></input>
                 </div>
             <div class= "input-field">
+            <input type= "password" id="contraseña" placeholder="Ingresa tu contraseña" required></input>
             <span class = "icon-eye">
+            
             <i class="fa-solid fa-eye"></i>
-            <span>
-                <input type= "text" id="contraseña" placeholder="Ingresa tu contraseña" required></input>
+            </span>
             </div>
             <div class= "check-box-text">
              <div class= "check-box-content">
@@ -51,9 +66,11 @@ export const showLogin = function () {
     showRegister();
   });
   // eslint-disable-next-line no-restricted-globals
-  history.pushState(null, null, '#Login');
+  history.pushState({view: 'showLogin'}, null, '#Login');
+
 };
 showLogin();
+<<<<<<< HEAD
 const sigInForm = document.querySelector('.login-form');
 document.getElementById('botonEntrar').addEventListener('click', async () => {
   //  no-unused-vars
@@ -72,14 +89,50 @@ document.getElementById('botonEntrar').addEventListener('click', async () => {
 // EventListener para el boton de inicio con Google
 const registerGoogle = document.querySelector('#botonGoogle');
 registerGoogle.addEventListener('click', async () => {
+=======
+const iconEye = document.querySelector('.icon-eye');
+const passwordInput = document.querySelector('#contraseña');
+iconEye.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+});
+
+// LOGIN NORMAL
+const sigInForm = document.querySelector('.login-form');
+document.getElementById('botonEntrar').addEventListener('click', async () => {
+  const email = sigInForm.correo.value;
+  const password = sigInForm['contraseña'].value;
+  try {
+    // const credentials = await signInWithEmailAndPassword (auth,email,password)
+  // eslint-disable-next-line no-empty
+  } catch (error) {
+  }
+  singin(email, password);
+});
+
+// LOGIN CON GOOGLE
+const registerGoogle = document.querySelector('#botonGoogle');
+registerGoogle.addEventListener('click', async () => {
+  // eslint-disable-next-line no-unused-vars
+>>>>>>> e29d663d54b9e72570689fff83b6aa644a868dfc
   const provider = new GoogleAuthProvider();
   try {
     // eslint-disable-next-line no-unused-vars
     const credentials = await signInWithPopup(auth, provider);
+<<<<<<< HEAD
   } catch (error) {
     // console.log(error)
   }
   showMuro();
+=======
+    showMuro();
+  // eslint-disable-next-line no-empty
+  } catch (error) {
+  }
+>>>>>>> e29d663d54b9e72570689fff83b6aa644a868dfc
 });
 // priorizar funciones que no tengan que ver con el DOM
 // then y catch

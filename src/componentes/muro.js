@@ -12,6 +12,6 @@ export const showMuro = function () {
 </div> `;
   document.getElementById('root').innerHTML = templatePrincipal;
   // eslint-disable-next-line no-restricted-globals
-  history.pushState(null, null, '#Muro');
+  history.pushState({view: 'showMuro'}, null, '#Muro');
 };
 showMuro();

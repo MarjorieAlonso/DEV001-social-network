@@ -1,18 +1,5 @@
-// eslint-disable-next-line import/no-unresolved
-import { signup } from '../src/lib/auth.js';
-
-jest.mock('firebase/auth');
-jest.mock(signup);
-// import { showRegister } from '../componentes/register.js';
-
-describe('signup()', () => {
-  it('debbe ser una funcion', () => {
-    // eslint-disable-next-line no-unused-vars, no-undef
-    const correo1 = email;
-    // eslint-disable-next-line no-unused-vars, no-undef
-    const password1 = password;
-    // eslint-disable-next-line no-undef
-    createUserWithEmailAndPassword(email, password);
+// importamos la funcion que vamos a testear
+import { myFunction } from '../src/lib/index';
 
     // eslint-disable-next-line no-undef
     expect(auth.createUserWithEmailAndPassword).toBeCalled();
