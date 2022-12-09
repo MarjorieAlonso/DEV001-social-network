@@ -19,3 +19,6 @@ export const Router = () => {
     default:
   }
 };
+window.addEventListener('popstate', (e) => {
+  Router();
+});
