@@ -10,8 +10,9 @@ export const showMuro = function () {
 <button class="botonP">publicar</button>
 <button class="botonM">me gusta</button>
 </div> `;
+  // eslint-disable-next-line no-multi-assign, no-unused-vars
   document.getElementById('root').innerHTML = templatePrincipal;
   // eslint-disable-next-line no-restricted-globals
-  history.pushState({view: 'showMuro'}, null, '#Muro');
+  history.pushState({ view: 'showMuro' }, null, '#Muro');
 };
 showMuro();

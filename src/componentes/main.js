@@ -1,6 +1,7 @@
 import '../lib/firebase.js';
 // eslint-disable-next-line no-unused-vars
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+// eslint-disable-next-line import/no-cycle
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
 // eslint-disable-next-line no-unused-vars
@@ -59,8 +60,7 @@ export const showLogin = function () {
     showRegister();
   });
   // eslint-disable-next-line no-restricted-globals
-  history.pushState({view: 'showLogin'}, null, '#Login');
-
+  history.pushState({ view: 'showLogin' }, null, '#Login');
 };
 showLogin();
 const iconEye = document.querySelector('.icon-eye');

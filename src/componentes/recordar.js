@@ -1,6 +1,7 @@
 import '../lib/firebase.js';
 
-export const showReset = function() {
+// eslint-disable-next-line func-names
+export const showReset = function () {
   const templateReset = `
 <div class= "container">
         <div class= "form">
@@ -25,4 +26,4 @@ export const showReset = function() {
   });
 };
 
-showRegister();
+// showRegister();
