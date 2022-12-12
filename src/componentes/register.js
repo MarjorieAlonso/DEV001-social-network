@@ -10,6 +10,7 @@ import { showMuro } from './muro.js';
 // import { GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
 // eslint-disable-next-line no-unused-vars
 import { showMuro } from './muro.js';
+// eslint-disable-next-line import/no-cycle, no-unused-vars
 import { Router } from '../router.js';
 >>>>>>> e29d663d54b9e72570689fff83b6aa644a868dfc
 
@@ -57,10 +58,6 @@ export const showRegister = function () {
     signup(email, password);
   });
   // eslint-disable-next-line no-restricted-globals
-<<<<<<< HEAD
-  history.pushState(null, null, '#Signup');
-=======
   history.pushState({view: 'showRegister'}, null, '#Signup');
->>>>>>> e29d663d54b9e72570689fff83b6aa644a868dfc
 };
 showRegister();

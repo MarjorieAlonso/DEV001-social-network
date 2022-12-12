@@ -26,5 +26,4 @@ export const showReset = function () {
   });
 };
 
-// eslint-disable-next-line no-undef
-showRegister();
+// showRegister();

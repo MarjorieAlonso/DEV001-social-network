@@ -1,24 +1,52 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-undef */
 // importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+// import { myFunction } from '../src/lib/index';
+// eslint-disable-next-line quotes
+import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { signup } from '../src/lib/auth';
+// eslint-disable-next-line quotes, no-unused-vars
+import path from 'path';
+// import signup from '../lib/auth.js';
 
+jest.mock('firebase/auth');
+jest.mock(path.resolve('lib/auth.js'));
+
+// jest.mock('firebase/auth');
+jest.mock(createUserWithEmailAndPassword);
+
+
+describe(signup, () => {
+  it('debería ser una función', () => {
+    expect(typeof signup).toBe('function');
+  });
+  it('Deberia aceptar usuario y password', () => {
+    createUserWithEmailAndPassword.mockImplementation(() => {
+      Promise.resolve({
+        email: 'pepita1990@gmail.com',
+        password: '123456',
+      });
+    });
+    signup(createUserWithEmailAndPassword);
+
+    expect(createUserWithEmailAndPassword).toBeCalled();
+  });
+
+  it('Debe retornar un objeto con las propiedades email y password', () => {
+    signup('pepita1990@gmail.com', '123456');
+    expect({
+      email: 'pepita1990@gmail.com',
+      password: '123456',
+    }).toEqual(expect.anything());
+  });
+});
+
+/* describe('signup()', () => {
+  it('debe ser una funcion', () => {
+    const correo1 = email;
+    const password1 = password;
     // eslint-disable-next-line no-undef
+    createUserWithEmailAndPassword(correo1, password1);
     expect(auth.createUserWithEmailAndPassword).toBeCalled();
   });
-});
-
-/*
-it('debe llamarse al metodo crear usuario', () => {
-  createUserWithEmailAndPassword.mockImplementation(() => Promise.resolve('pepita1990@gmail.com'));
-  signup(createUserWithEmailAndPassword);
-  expect(createUserWithEmailAndPassword).toBeCalled();
-});
-it('deberia retornar un objeto con la propiedad email', () => {
-  signup('mayitodraven@gmail.com', '123456').then((user) => {
-    expect(user).toBe('mayitodraven@gmail.com');
-  });
-});
-it('Debe recibir parámetros', () => {
-  signup('pepita1990@gmail.com', '123456');
-expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(getAuth
-});
- */
+}); */

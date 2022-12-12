@@ -1,5 +1,6 @@
 import '../lib/firebase.js';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+// eslint-disable-next-line import/no-cycle
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
 import { auth } from '../lib/auth.js';
