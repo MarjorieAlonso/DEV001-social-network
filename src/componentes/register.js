@@ -5,6 +5,7 @@ import { signup, auth } from '../lib/auth.js';
 // import { GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
 // eslint-disable-next-line no-unused-vars
 import { showMuro } from './muro.js';
+// eslint-disable-next-line import/no-cycle, no-unused-vars
 import { Router } from '../router.js';
 
 // eslint-disable-next-line func-names
@@ -51,6 +52,6 @@ export const showRegister = function () {
     signup(email, password);
   });
   // eslint-disable-next-line no-restricted-globals
-  history.pushState({view: 'showRegister'}, null, '#Signup');
+  history.pushState({ view: 'showRegister' }, null, '#Signup');
 };
 showRegister();
