@@ -20,7 +20,7 @@ export const showLogin = function () {
             <div class= "input-field">
             <input type= "password" id="contraseña" placeholder="Ingresa tu contraseña" required></input>
             <span class = "icon-eye">
-            
+
             <i class="fa-solid fa-eye"></i>
             </span>
             </div>
