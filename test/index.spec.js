@@ -1,52 +1,27 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-undef */
-// importamos la funcion que vamos a testear
-// import { myFunction } from '../src/lib/index';
 // eslint-disable-next-line quotes
 import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { signup } from '../src/lib/auth';
 // eslint-disable-next-line quotes, no-unused-vars
 import path from 'path';
-// import signup from '../lib/auth.js';
+import { signup } from '../src/lib/auth';
+// import { auth } from "../src/lib/firebase";
+// jest-environment jsdom;
 
 jest.mock('firebase/auth');
-jest.mock(path.resolve('lib/auth.js'));
+jest.mock('firebase/firestore');
 
-// jest.mock('firebase/auth');
-jest.mock(createUserWithEmailAndPassword);
+test('Signup es una función', () => {
+  // Set up our document body
+  document.body.innerHTML = '<div id= "root"> </div>';
+  const res = Promise.resolve({ email: 'pepita1990@gmail.com', password: '123456' });
+  createUserWithEmailAndPassword.mockResolvedValue(res);
 
+  signup();
 
-describe(signup, () => {
-  it('debería ser una función', () => {
-    expect(typeof signup).toBe('function');
-  });
-  it('Deberia aceptar usuario y password', () => {
-    createUserWithEmailAndPassword.mockImplementation(() => {
-      Promise.resolve({
-        email: 'pepita1990@gmail.com',
-        password: '123456',
-      });
-    });
-    signup(createUserWithEmailAndPassword);
-
-    expect(createUserWithEmailAndPassword).toBeCalled();
-  });
-
-  it('Debe retornar un objeto con las propiedades email y password', () => {
-    signup('pepita1990@gmail.com', '123456');
-    expect({
-      email: 'pepita1990@gmail.com',
-      password: '123456',
-    }).toEqual(expect.anything());
-  });
+  expect(typeof signup).toBe('function');
+  expect(createUserWithEmailAndPassword).toBeCalled();
 });
 
-/* describe('signup()', () => {
-  it('debe ser una funcion', () => {
-    const correo1 = email;
-    const password1 = password;
-    // eslint-disable-next-line no-undef
-    createUserWithEmailAndPassword(correo1, password1);
-    expect(auth.createUserWithEmailAndPassword).toBeCalled();
-  });
-}); */
+/* test ('Signin es una función', () =>{
+  document.createElement('div').setAttribute('id','root');
+  const respuesta = Promise.resolve({})
+}) pendiente para cuando se guarde info del usuario */
