@@ -15,4 +15,4 @@ export const showMuro = function () {
   // eslint-disable-next-line no-restricted-globals
   history.pushState({ view: 'showMuro' }, null, '#Muro');
 };
-showMuro();
+// showMuro();
