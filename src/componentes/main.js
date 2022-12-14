@@ -1,9 +1,16 @@
 import '../lib/firebase.js';
+// eslint-disable-next-line no-unused-vars
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // eslint-disable-next-line import/no-cycle
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
-import { auth } from '../lib/auth.js';
+// eslint-disable-next-line no-unused-vars
+import { auth, singin } from '../lib/auth.js';
+
+// Este es el punto de entrada de tu aplicacion
+// import { myFunction } from './lib/index.js';
+
+// myFunction();
 
 // eslint-disable-next-line func-names
 export const showLogin = function () {
@@ -56,24 +63,33 @@ export const showLogin = function () {
   history.pushState({ view: 'showLogin' }, null, '#Login');
 };
 showLogin();
+const iconEye = document.querySelector('.icon-eye');
+const passwordInput = document.querySelector('#contraseña');
+iconEye.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+});
+
+// LOGIN NORMAL
 const sigInForm = document.querySelector('.login-form');
 document.getElementById('botonEntrar').addEventListener('click', async () => {
-  //  no-unused-vars
-  // eslint-disable-next-line no-unused-vars
   const email = sigInForm.correo.value;
-
-  // eslint-disable-next-line no-unused-vars
   const password = sigInForm['contraseña'].value;
   try {
   // const credentials = await signInWithEmailAndPassword(auth, email, password);
-
+  // eslint-disable-next-line no-empty
   } catch (error) { /* empty */
   }
-  showMuro();
+  singin(email, password);
 });
-// EventListener para el boton de inicio con Google
+
+// LOGIN CON GOOGLE
 const registerGoogle = document.querySelector('#botonGoogle');
 registerGoogle.addEventListener('click', async () => {
+  // eslint-disable-next-line no-unused-vars
   const provider = new GoogleAuthProvider();
   try {
     // eslint-disable-next-line no-unused-vars
