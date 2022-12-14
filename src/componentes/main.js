@@ -79,9 +79,9 @@ document.getElementById('botonEntrar').addEventListener('click', async () => {
   const email = sigInForm.correo.value;
   const password = sigInForm['contraseña'].value;
   try {
-    // const credentials = await signInWithEmailAndPassword (auth,email,password)
+  // const credentials = await signInWithEmailAndPassword(auth, email, password);
   // eslint-disable-next-line no-empty
-  } catch (error) {
+  } catch (error) { /* empty */
   }
   singin(email, password);
 });
