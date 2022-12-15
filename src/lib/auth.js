@@ -1,14 +1,16 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'firebase/auth';
 // eslint-disable-next-line import/no-unresolved
 import { showMuro } from '../Componentes/muro.js';
 import { app } from './firebase.js';
 // import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // REGISTARME
 export const auth = getAuth(app);
-export const signup = (email, password) => {
+export const signup = (email, password,userName) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
+      updateProfile(auth.currentUser, {
+        displayName: userName,         
+      });
       // eslint-disable-next-line no-unused-vars
       const user = userCredential.user;
       // eslint-disable-next-line no-alert
@@ -40,6 +42,7 @@ export const singin = (email, password) => {
     // Signed in
       // eslint-disable-next-line no-unused-vars
       const user = userCredential.user;
+       console.log(user);
       showMuro();
     })
     .catch((error) => {
@@ -55,8 +58,10 @@ export const singin = (email, password) => {
     });
 };
 
-// todo esto se testea!!!
-// spy (función vacia) se hace de de auth pero se hace mock de signin y createuser
-// primero se hace el test, luegopasamos las funciones a spy para que esten vacias
-// y al final se hace mock para comprobar que sean llamadas/usadas(toBeCalled)
-// sin crear usuarios o archivos
+//PERFIL DE USUARIO
+const user = auth.currentUser;
+if (user !== null) {
+  // The user object has basic properties such as display name, email, etc.
+  const displayName = user.displayName;
+  const uid = user.uid;
+}

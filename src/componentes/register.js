@@ -17,7 +17,7 @@ export const showRegister = function () {
             <span class= title>Sign Up</span>
             <form action="#" id="login-form">
                 <div class= "input-field">
-                <input type= "text" id="userName"placeholder= "Nombre de Usuario" required></input>
+                <input type= "text" id="userName" placeholder= "Nombre de Usuario" required></input>
                 </div>
             <div class= "input-field">
             <input  type= "text" id='correo'  class='email' placeholder="Correo electronico" required></input>
@@ -49,9 +49,11 @@ export const showRegister = function () {
     const userName = signupForm.userName.value;
     const email = signupForm.correo.value;
     const password = signupForm.creaCont.value;
-    signup(email, password);
+    signup(email, password, userName);
   });
   // eslint-disable-next-line no-restricted-globals
   history.pushState({ view: 'showRegister' }, null, '#Signup');
 };
 showRegister();
+
+//obtener 
