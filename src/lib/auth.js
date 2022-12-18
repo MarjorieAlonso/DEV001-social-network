@@ -1,21 +1,23 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'firebase/auth';
-// eslint-disable-next-line import/no-unresolved
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+// eslint-disable-next-line import/no-unresolved, import/no-cycle
 import { showMuro } from '../Componentes/muro.js';
 import { app } from './firebase.js';
 // import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // REGISTARME
 export const auth = getAuth(app);
-export const signup = (email, password,userName) => {
+export const currentUserInfo = () => auth.currentUser;
+export const signup = (email, password, userName) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       updateProfile(auth.currentUser, {
-        displayName: userName,         
-      });
+        displayName: userName,
+      })
+        .then(() => {
+          showMuro();
+        });
       // eslint-disable-next-line no-unused-vars
       const user = userCredential.user;
       // eslint-disable-next-line no-alert
-      // alert('Bienvenido a Recomiendame la movie');
-      showMuro();
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -42,7 +44,6 @@ export const singin = (email, password) => {
     // Signed in
       // eslint-disable-next-line no-unused-vars
       const user = userCredential.user;
-       console.log(user);
       showMuro();
     })
     .catch((error) => {
@@ -58,10 +59,12 @@ export const singin = (email, password) => {
     });
 };
 
-//PERFIL DE USUARIO
+// PERFIL DE USUARIO
 const user = auth.currentUser;
 if (user !== null) {
   // The user object has basic properties such as display name, email, etc.
+  // eslint-disable-next-line no-unused-vars
   const displayName = user.displayName;
+  // eslint-disable-next-line no-unused-vars
   const uid = user.uid;
 }

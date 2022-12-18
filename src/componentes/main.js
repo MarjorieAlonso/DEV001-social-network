@@ -46,7 +46,8 @@ export const showLogin = function () {
                <span class= "text">Aún no te registras?
                 <a href="#" class="signup-text" id="signup">Registrarme</a>
                 <div class="buttonGoogle">
-                <input type="button" class="registroGoogle" id="botonGoogle" value="Entrar con Google">
+                <button class="registroGoogle" id="botonGoogle">
+                <img src="images/logogoogle.jpeg" class="logoGoogle">Entrar con Google</button>
                 </div>
                </span>
               </div>
