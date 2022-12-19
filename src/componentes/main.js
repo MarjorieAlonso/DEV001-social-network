@@ -5,7 +5,7 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { showRegister } from './register.js';
 import { showMuro } from './muro.js';
 // eslint-disable-next-line no-unused-vars
-import { auth, singin } from '../lib/auth.js';
+import { auth, signIn } from '../lib/auth.js';
 
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
@@ -84,7 +84,7 @@ document.getElementById('botonEntrar').addEventListener('click', async () => {
   // eslint-disable-next-line no-empty
   } catch (error) { /* empty */
   }
-  singin(email, password);
+  signIn(email, password);
 });
 
 // LOGIN CON GOOGLE

@@ -1,4 +1,4 @@
-import { saveTask } from '../lib/firebase.js';
+// import { saveTask } from '../lib/firebase.js';
 import { currentUserInfo } from '../lib/auth.js';
 // eslint-disable-next-line func-names
 
@@ -21,12 +21,12 @@ export const showMuro = function () {
   window.addEventListener('DOMContentLoaded', () => {
 
   });
- /* const taskForm = document.getElementById('form');
-  taskForm.addEventListener('submit', (e) => {
+  /* const taskForm = document.getElementById('form');
+   taskForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const mensaje = taskForm['mensaje1'];
     saveTask(mensaje.value);
-  });*/
+  }); */
   // eslint-disable-next-line no-restricted-globals
   history.pushState({ view: 'showMuro' }, null, '#Muro');
 };

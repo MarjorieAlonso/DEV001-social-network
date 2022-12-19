@@ -1,4 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
+} from 'firebase/auth';
 // eslint-disable-next-line import/no-unresolved, import/no-cycle
 import { showMuro } from '../Componentes/muro.js';
 import { app } from './firebase.js';
@@ -38,7 +40,7 @@ export const signup = (email, password, userName) => {
 };
 // INICIAR SESION
 export const auth2 = getAuth(app);
-export const singin = (email, password) => {
+export const signIn = (email, password) => {
   signInWithEmailAndPassword(auth2, email, password)
     .then((userCredential) => {
     // Signed in
@@ -58,13 +60,3 @@ export const singin = (email, password) => {
       }
     });
 };
-
-// PERFIL DE USUARIO
-const user = auth.currentUser;
-if (user !== null) {
-  // The user object has basic properties such as display name, email, etc.
-  // eslint-disable-next-line no-unused-vars
-  const displayName = user.displayName;
-  // eslint-disable-next-line no-unused-vars
-  const uid = user.uid;
-}

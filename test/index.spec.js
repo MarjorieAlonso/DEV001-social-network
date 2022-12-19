@@ -21,7 +21,12 @@ test('Signup es una función', () => {
   expect(createUserWithEmailAndPassword).toBeCalled();
 });
 
-/* test ('Signin es una función', () =>{
-  document.createElement('div').setAttribute('id','root');
-  const respuesta = Promise.resolve({})
-}) pendiente para cuando se guarde info del usuario */
+/* test('Signin es una función', () => {
+  document.body.innerHTML = '<div id= "root"> </div>';
+  const respuesta = Promise.resolve({ email: 'pepita1990@gmail.com', password: '123456' });
+  signInWithEmailAndPassword.mockResolvedValue(respuesta);
+
+  signIn();
+  expect(typeof signIn).toBe('function');
+  expect(signInWithEmailAndPassword).toBeCalled();
+}); */
