@@ -46,14 +46,14 @@ export const showRegister = function () {
   document.getElementById('botonRegistrar').addEventListener('click', (e) => {
     e.preventDefault();
     // eslint-disable-next-line no-unused-vars
-    const userName = signupForm.userName.value;
+    // const userName = signupForm.userName.value;
     const email = signupForm.correo.value;
     const password = signupForm.creaCont.value;
+    const userName = signupForm.userName.value;
     signup(email, password, userName);
   });
+
   // eslint-disable-next-line no-restricted-globals
   history.pushState({ view: 'showRegister' }, null, '#Signup');
 };
 showRegister();
-
-//obtener 
