@@ -24,15 +24,15 @@ export const signup = (email, password, userName) => {
     .catch((error) => {
       const errorCode = error.code;
       // const errorMessage = error.message;
-      if (errorCode.includes('auth/email-already-in-use')) {
+      if (errorCode === ('auth/email-already-in-use')) {
         // eslint-disable-next-line no-alert
         alert('este mail ya se encuentra registrado');
       }
-      if (errorCode.includes('auth/internal-error')) {
+      if (errorCode === ('auth/internal-error')) {
         // eslint-disable-next-line no-alert
         alert('correo invalido');
       }
-      if (errorCode.includes('auth/weak-password')) {
+      if (errorCode === ('auth/weak-password')) {
         // eslint-disable-next-line no-alert
         alert('la contraseña debe tener al menos 6 caracteres');
       }
@@ -50,13 +50,14 @@ export const signIn = (email, password) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      if (errorCode.includes('auth/invalid-email')) {
+      if (errorCode === ('auth/invalid-email')) {
         // eslint-disable-next-line no-alert
         alert('este correo no existe');
       }
-      if (errorCode.includes('auth/wrong-password')) {
+      if (errorCode === ('auth/wrong-password')) {
       // eslint-disable-next-line no-alert
         alert('contraseña incorrecta');
       }
     });
 };
+// agregrar coleccion
