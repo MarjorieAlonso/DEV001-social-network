@@ -1,8 +1,8 @@
 // eslint-disable-next-line quotes
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 // eslint-disable-next-line quotes, no-unused-vars
 import path from 'path';
-import { signup } from '../src/lib/auth';
+import { signup, signIn } from '../src/lib/auth';
 // import { auth } from "../src/lib/firebase";
 // jest-environment jsdom;
 
@@ -21,7 +21,7 @@ test('Signup es una función', () => {
   expect(createUserWithEmailAndPassword).toBeCalled();
 });
 
-/* test('Signin es una función', () => {
+test('Signin es una función', () => {
   document.body.innerHTML = '<div id= "root"> </div>';
   const respuesta = Promise.resolve({ email: 'pepita1990@gmail.com', password: '123456' });
   signInWithEmailAndPassword.mockResolvedValue(respuesta);
@@ -29,4 +29,4 @@ test('Signup es una función', () => {
   signIn();
   expect(typeof signIn).toBe('function');
   expect(signInWithEmailAndPassword).toBeCalled();
-}); */
+});
