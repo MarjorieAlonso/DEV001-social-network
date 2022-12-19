@@ -21,12 +21,12 @@ export const showMuro = function () {
   window.addEventListener('DOMContentLoaded', () => {
 
   });
-  const taskForm = document.getElementById('form');
+ /* const taskForm = document.getElementById('form');
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const mensaje = taskForm['mensaje1'];
     saveTask(mensaje.value);
-  });
+  });*/
   // eslint-disable-next-line no-restricted-globals
   history.pushState({ view: 'showMuro' }, null, '#Muro');
 };
