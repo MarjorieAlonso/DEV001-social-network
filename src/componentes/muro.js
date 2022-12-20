@@ -8,22 +8,21 @@ export const showMuro = function () {
   const templatePrincipal = `
 
 <h3> Hola ${currentUserInfo().displayName}</h3>
-<div id="contenedor">
+<form id="task-form">
 <textarea name="mensaje" id="mensaje1" cols="50" rows="10" placeholder="Escribe aqui"></textarea>
-</div>
-<div class ="botonPublicar">
 <button class="botonP" id= "botonP">publicar</button>
 <button class="botonM">me gusta</button>
-</div> `;
+</form>`;
   // eslint-disable-next-line no-multi-assign, no-unused-vars
   document.getElementById('root').innerHTML = templatePrincipal;
 
   window.addEventListener('DOMContentLoaded', () => {
-
+   
   });
-  const taskForm = document.getElementById('form');
+  const taskForm = document.getElementById('task-form');
   taskForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    console.log('taskForm');
     const mensaje = taskForm.mensaje1;
     saveTask(mensaje.value);
   });

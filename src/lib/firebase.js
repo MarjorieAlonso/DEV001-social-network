@@ -19,9 +19,6 @@ export const db = getFirestore(app);
 export const saveTask = (mensaje1) => {
   addDoc(collection(db, 'task'), { mensaje1 });
 };
-// export const updateProfileUser = (userName) => updateProfile(auth.currentUser, {
-// displayName: userName,
-// });
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
