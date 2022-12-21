@@ -22,3 +22,4 @@ export const saveTask = (mensaje1) => {
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
+export const post = (coment, likes, uid) => addDoc(collection(db, 'posts'), coment, likes, uid);

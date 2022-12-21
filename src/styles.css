@@ -152,28 +152,35 @@ header{
 }
 #task-form{
     display: flex;
-justify-content: center;
+    justify-content: center;
     border-radius: 7px;
     margin-top: 40px;
 }
-.botonPublicar{
+.botones{
     display: flex;
-    justify-content: center;
-   padding: 5px; 
-   margin-top: 10px;
 }
+ .botonP{
+    display: flex;
+    margin-left: 430px;
+    background-color:aquamarine;
+    padding: 5px;
+    border-radius: 7px;
+    text-align: center;
+} 
 .botonM{
     display: flex;
-    margin-left:150px;
+    margin-left: 140px;
     background-color:aquamarine;
     padding: 5px;
     border-radius: 7px;
 }
-.botonP{
-    border-radius: 7px;
+/*.botonP{
+    display: flex;
+    margin-right: 150px;
     background-color:aquamarine;
     padding: 5px;
-}
+    border-radius: 7px;
+} */
 .icon-eye{
    color:black;
    position: absolute;
