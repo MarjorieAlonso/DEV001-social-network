@@ -14,12 +14,12 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 // Initialize Firebase Authentication and get a reference to the service
 export const db = getFirestore(app);
 export const saveTask = (mensaje1) => {
   addDoc(collection(db, 'task'), { mensaje1 });
 };
-
+/*  const post = (contenido, likes, uid) => addDoc(collection(db, 'posts'), Contenido, Likes, Uid),{
+}; */
 // Initialize Firebase Authentication and get a reference to the service
-export const auth = getAuth(app);
-export const post = (coment, likes, uid) => addDoc(collection(db, 'posts'), coment, likes, uid);
