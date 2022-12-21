@@ -1,6 +1,6 @@
-// import { saveTask } from '../lib/firebase.js';
+import { addDoc, collection } from 'firebase/firestore';
 import { currentUserInfo } from '../lib/auth.js';
-import { post } from '../lib/firebase.js';
+import { saveTask, db, auth } from '../lib/firebase.js';
 // eslint-disable-next-line func-names
 
 // eslint-disable-next-line func-names
@@ -21,29 +21,21 @@ export const showMuro = function () {
 
   // eslint-disable-next-line no-multi-assign, no-unused-vars
   document.getElementById('root').innerHTML = templatePrincipal;
-
   // window.addEventListener('DOMContentLoaded', () => {
 
   // });
+  const savePost = (contenido, uid) => addDoc(collection(db, 'task'),{
+    content: contenido,
+    likes: 0,
+    uid,
+  });
   const taskForm = document.getElementById('task-form');
   taskForm.addEventListener('submit', (e) => {
+    saveTask();
     e.preventDefault();
-    // console.log(taskForm);
     const mensaje = document.getElementById('mensaje1').value;
-    // console.log(mensaje);
-    if (mensaje === '' || mensaje === '  ') {
-      // alert('Este campo es requerido');
-    } else {
-      const published = {};
-      published.fecha = Number(new Date());
-      published.mensaje = mensaje;
-      published.likes = [];
-      published.uid = currentUserInfo().uid;
-      published.userName = currentUserInfo().displayName;
-      post(published).then();
-    // console.log(published);
-    }
   });
+
   // eslint-disable-next-line no-restricted-globals
   history.pushState({ view: 'showMuro' }, null, '#Muro');
 };
