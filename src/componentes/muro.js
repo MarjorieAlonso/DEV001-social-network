@@ -11,31 +11,29 @@ export const showMuro = function () {
 <h3> Hola ${currentUserInfo().displayName}</h3>
 <form id="task-form">
 <textarea name="mensaje" id="mensaje1" class="mensaje1" cols="50" rows="10" placeholder="Escribe aqui"></textarea>
-
+<button class="botonP" id= "botonP">Publicar</button>
 </form>
-<div class="botones">
-<button type="submit" class="botonP" id= "botonP">Publicar</button>
+<div class="botonLike">
 <button type="submit" class="botonM" id= "botonM">Me gusta</button>
 </div>
 `;
 
   // eslint-disable-next-line no-multi-assign, no-unused-vars
   document.getElementById('root').innerHTML = templatePrincipal;
-  // window.addEventListener('DOMContentLoaded', () => {
-
-  // });
-  const savePost = (contenido, uid) => addDoc(collection(db, 'task'),{
-    content: contenido,
-    likes: 0,
-    uid,
-  });
-  const taskForm = document.getElementById('task-form');
-  taskForm.addEventListener('submit', (e) => {
-    saveTask();
+  const publish = document.getElementById('botonP');
+   publish.addEventListener('click', (e) => {
     e.preventDefault();
-    const mensaje = document.getElementById('mensaje1').value;
-  });
-
+    const mensaje =  document.getElementById('mensaje1').value;
+    saveTask(mensaje);
+   });
   // eslint-disable-next-line no-restricted-globals
   history.pushState({ view: 'showMuro' }, null, '#Muro');
 };
+
+// Función para guardar el post
+ /* const savePost = (contenido, uid) => addDoc(collection(db, 'task'),{
+  content: contenido,
+  likes: 0,
+  uid,
+}); */
+

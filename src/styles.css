@@ -159,28 +159,22 @@ header{
 .botones{
     display: flex;
 }
- .botonP{
+ .botones .botonP{
     display: flex;
     margin-left: 430px;
     background-color:aquamarine;
     padding: 5px;
     border-radius: 7px;
     text-align: center;
+    justify-content: center;
 } 
-.botonM{
+.botones .botonM{
     display: flex;
     margin-left: 140px;
     background-color:aquamarine;
     padding: 5px;
     border-radius: 7px;
 }
-/*.botonP{
-    display: flex;
-    margin-right: 150px;
-    background-color:aquamarine;
-    padding: 5px;
-    border-radius: 7px;
-} */
 .icon-eye{
    color:black;
    position: absolute;
