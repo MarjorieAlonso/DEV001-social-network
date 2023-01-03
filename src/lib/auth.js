@@ -1,11 +1,11 @@
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
+  onAuthStateChanged,
 } from 'firebase/auth';
 // eslint-disable-next-line import/no-unresolved, import/no-cycle
 import { showMuro } from '../Componentes/muro.js';
 import { app } from './firebase.js';
-import { onAuthStateChanged } from 'firebase/auth';
-import { async } from 'regenerator-runtime';
+
 // REGISTARME
 export const auth = getAuth(app);
 export const currentUserInfo = () => auth.currentUser;
@@ -20,11 +20,12 @@ export const signup = (email, password, userName) => {
         });
       // eslint-disable-next-line no-unused-vars
       const user = userCredential.user;
-      onAuthStateChanged (auth, async (user) =>{
-      if (user){
-        
-      }
-      })
+      // eslint-disable-next-line no-shadow
+      onAuthStateChanged(auth, async (user) => {
+        // eslint-disable-next-line no-empty
+        if (user) {
+        }
+      });
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -65,4 +66,3 @@ export const signIn = (email, password) => {
       }
     });
 };
-

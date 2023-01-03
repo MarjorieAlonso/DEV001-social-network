@@ -10,7 +10,7 @@ h1 {
     text-align: center;
 }
 body{
-    background-color: black;
+    background-color: white;
    vertical-align: top;
     justify-content: center;
     align-items: center;
@@ -168,7 +168,7 @@ header{
     text-align: center;
     justify-content: center;
 } 
-.botones .botonM{
+.botones .botonE{
     display: flex;
     margin-left: 140px;
     background-color:aquamarine;
