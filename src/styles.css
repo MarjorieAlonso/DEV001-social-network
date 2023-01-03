@@ -10,7 +10,7 @@ h1 {
     text-align: center;
 }
 body{
-    background-color: white;
+    background-color:black;
    vertical-align: top;
     justify-content: center;
     align-items: center;
@@ -188,6 +188,18 @@ h3{
     font-family: 'Press Start 2P', cursive;
     color: yellow;
     text-align: center;
+}
+.usuarios h4{
+    font-family: 'Poppins', sans-serif; 
+    color: white;
+    text-align: center;
+    background-color: blue;
+}
+.comentarios h4 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 991px) {
