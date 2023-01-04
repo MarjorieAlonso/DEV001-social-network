@@ -156,14 +156,10 @@ header{
     border-radius: 7px;
 }
 .containerComents{
-transform: translate(-50%, -50%);
-position: relative;
-max-width: 430px;
-width: 100%;
+display: grid;
+grid-template-columns:100px 50px;
 background-color: gainsboro;
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-top: 15%;
-left: 50%;
 border-radius: 7px;
 }
 
@@ -175,16 +171,13 @@ border-radius: 7px;
     align-items: center;
 } 
 .comentarios{
-transform: translate(-50%, -50%);
-position: relative;
-max-width: 430px;
-width: 100%;
-height: 85%;
+    margin-top: 10px;
+    display: grid;
+grid-template-columns: 100 px;
+grid-template-rows: 50 px;
+gap : 10px;
 background-color: gainsboro;
-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-top: 50px;
-left: 50%;
-border-radius: 7px;
+color :black;
 }
 .botones{
     display: flex;
@@ -225,11 +218,12 @@ h3{
     justify-content: center;
 }
 h4{
+    margin-top: 60px;
     font-family: 'Poppins', sans-serif; 
     color: black;
     text-align: center;
     background-color: gainsboro;
-    margin-top: 60px;
+    
 }
 h5 {
     color: black;
