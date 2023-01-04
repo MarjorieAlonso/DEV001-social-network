@@ -2,7 +2,8 @@ import { initializeApp } from 'firebase/app';
 // eslint-disable-next-line no-unused-vars
 import { getAuth } from 'firebase/auth';
 import {
-  getFirestore, collection, addDoc, getDocs, onSnapshot,
+  getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc,
+  doc,
 } from 'firebase/firestore';
 // import { signInWithPopup } from "firebase/auth";
 
@@ -30,13 +31,4 @@ export const onGetComents = (querySnapshot) => {
   const queryPost = query(collection(db, 'coments'), orderBy('date', 'desc'));
   onSnapshot(queryPost, querySnapshot);
 };
-
-/* const docRef = doc(db, "task");
-const docSnap = await getDoc(docRef);
-
-if (docSnap.exists()) {
-  console.log("Document data:", docSnap.data());
-} else {
-  // doc.data() will be undefined in this case
-  console.log("No such document!");
-} */
+export const deleteTask = id => deleteDoc(doc(db, 'task',id))

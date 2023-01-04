@@ -7,7 +7,7 @@ import { showRegister } from './componentes/register.js';
 export const Router = () => {
   // eslint-disable-next-line no-restricted-globals
   const hash = location.hash;
-  // rootDiv.innerHTML=null;
+  // EN EL CASO DE QUE SEA EL HASH DE LA PÁGINA LE DECIMOS QUE ES LO QUE TIENE QUE MOSTRAR
   switch (hash) {
     case '#Login':
       showLogin();
@@ -22,6 +22,7 @@ export const Router = () => {
   }
 };
 // eslint-disable-next-line no-unused-vars
+// ESCUCHA EN QUE VENTANA ESTAS
 window.addEventListener('popstate', (e) => {
   Router();
 });
