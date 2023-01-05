@@ -3,7 +3,7 @@
 import { onSnapshot, collection } from 'firebase/firestore';
 import { currentUserInfo } from '../lib/auth.js';
 import {
-  saveTask, db, deleteTask, getTask,
+  saveTask, db, deleteTask, getTask, updateTask,
 } from '../lib/firebase.js';
 
 // eslint-disable-next-line func-names
@@ -28,6 +28,7 @@ export const showMuro = function () {
   const taskForm = document.getElementById('task-form');
   const taskContainer = document.getElementById('container');
   let editStatus = false;
+  let id = '';
   // eslint-disable-next-line arrow-parens
   onSnapshot(collection(db, 'task'), querySnapshot => {
     // eslint-disable-next-line arrow-parens, no-shadow
@@ -57,11 +58,13 @@ export const showMuro = function () {
       });
       const editar = taskContainer.querySelectorAll('.botonE');
       editar.forEach((btn) => {
-        btn.addEventListener('click', async (event) => {
-          const doc = await getTask(event.target.dataset.id);
+        btn.addEventListener('click', async ({ target: { dataset } }) => {
+          const doc = await getTask(dataset.id);
           const task = doc.data();
-          taskForm.mensaje1.value = task.mensaje1;
+          taskForm.mensaje.value = task.mensaje;
           editStatus = true;
+          id = doc.id;
+          //taskForm.botonP.innerHTML = 'update';
         });
       });
     };
@@ -72,11 +75,13 @@ export const showMuro = function () {
   publish.addEventListener('click', (e) => {
     e.preventDefault();
     const mensaje = document.getElementById('mensaje1').value;
-    if (editStatus) {
-      console.log('loading');
-    } else {
+    if (!editStatus) {
       saveTask(mensaje, currentUserInfo().displayName, currentUserInfo().uid);
+    } else {
+      updateTask(id, { mensaje });
+      editStatus = false;
     }
+    taskForm.reset();
   });
   // BOTON QUE RECARGA PARA VOLVER AL INICIO
   const btnInicio = document.querySelector('.inicio');
