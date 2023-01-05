@@ -4,6 +4,7 @@ import { getAuth } from 'firebase/auth';
 import {
   getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc,
   doc,
+  getDoc,
 } from 'firebase/firestore';
 // import { signInWithPopup } from "firebase/auth";
 
@@ -31,4 +32,5 @@ export const onGetComents = (querySnapshot) => {
   const queryPost = query(collection(db, 'coments'), orderBy('date', 'desc'));
   onSnapshot(queryPost, querySnapshot);
 };
-export const deleteTask = id => deleteDoc(doc(db, 'task',id))
+export const deleteTask = (id) => deleteDoc(doc(db, 'task', id));
+export const getTask = (id) => getDoc(doc(db, 'task', id));
