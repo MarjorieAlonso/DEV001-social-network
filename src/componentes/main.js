@@ -100,5 +100,3 @@ registerGoogle.addEventListener('click', async () => {
   } catch (error) {
   }
 });
-// priorizar funciones que no tengan que ver con el DOM
-// then y catch
