@@ -4,7 +4,7 @@ import { getAuth } from 'firebase/auth';
 import {
   getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc,
   doc,
-  getDoc,
+  getDoc, updateDoc,
 } from 'firebase/firestore';
 // import { signInWithPopup } from "firebase/auth";
 
@@ -34,3 +34,4 @@ export const onGetComents = (querySnapshot) => {
 };
 export const deleteTask = (id) => deleteDoc(doc(db, 'task', id));
 export const getTask = (id) => getDoc(doc(db, 'task', id));
+export const updateTask = (id, newField) => updateDoc(doc(db, 'task', id), newField);
