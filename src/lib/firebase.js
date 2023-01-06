@@ -34,4 +34,4 @@ export const onGetComents = (querySnapshot) => {
 };
 export const deleteTask = (id) => deleteDoc(doc(db, 'task', id));
 export const getTask = (id) => getDoc(doc(db, 'task', id));
-export const updateTask = (id, newDoc) => updateDoc(doc(db, 'task', id), newDoc);
+export const updateTask = (id, newField) => updateDoc(doc(db, 'task', id), newField);
