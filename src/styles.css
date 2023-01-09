@@ -161,14 +161,21 @@ grid-template-columns:100px 50px;
 background-color: gainsboro;
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 border-radius: 7px;
+width: 40%;
+align-content: center;
+margin-left: 30%;
 }
-
+ .botonCerrar{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 20px;
+ }
 .inicio{
         display: flex;
         float: right;
         padding: 3px;
-        margin-right: 15px;
-        margin-top: 15px;
+        margin-left:30%;
+        margin-top: 1px;
         color: white;
         background-color: black;
         text-decoration: none;
@@ -178,6 +185,11 @@ border-radius: 7px;
         letter-spacing: 1px;
         transition: .4s;
       }
+.mensaje1{
+    display: flex;
+    border-radius: 7px;
+
+}
 .inicio:hover {
     box-shadow: 3px 3px 10px 10px yellow;
   }
@@ -188,7 +200,11 @@ border-radius: 7px;
     text-align: center;
     align-items: center;
     font-weight: bold;
+    filter: brightness(90%);
 } 
+.botonP:hover {
+    filter: brightness(100%);
+  }
 .comentarios{
     margin-top: 10px;
     display: grid;
@@ -197,6 +213,8 @@ grid-template-rows: 50 px;
 gap : 10px;
 background-color: gainsboro;
 color :black;
+width: 40%;
+margin-left: 30%;
 }
 .botones{
     display: flex;
@@ -212,17 +230,26 @@ color :black;
     align-items: center;
     border: none;
     font-weight: bold;
+    filter: brightness(90%);
 }
+.botonE:hover {
+    filter: brightness(100%);
+  }
+  
 .botonEl{
     display: flex;
     margin-left: 140px;
-    background-color:rgba(179, 17, 17, 0.863);
+    background-color:rgba(218, 17, 17, 0.863);
     padding: 5px;
     border-radius: 7px;
     border: none;
     font-weight: bold;
-
+    filter: brightness(90%);
 }
+.botonEl:hover {
+    filter: brightness(100%);
+  }
+
 .icon-eye{
    color:black;
    position: absolute;
@@ -236,6 +263,7 @@ h3{
     font-family: 'Press Start 2P', cursive;
     color: yellow;
     text-align: center;
+    margin-top: 10px;
 }
 h4{
     margin-top: 60px;
