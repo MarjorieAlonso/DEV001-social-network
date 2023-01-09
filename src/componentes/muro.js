@@ -11,11 +11,11 @@ export const showMuro = function () {
   // console.log (currentUserInfo().displayName)
   const templatePrincipal = `
 <h3> Hola ${currentUserInfo().displayName}</h3>
-<button class="edit-act" id="edit-act">Actualizar Editar</button>
-<button class="inicio" id="inicio">Regresar al Inicio</button>
+<button class="inicio" id="inicio">Cerrar sesión</button>
 <form id="task-form" class="containerComents">
 <textarea name="mensaje" id="mensaje1" class="mensaje1" cols="50" rows="10" placeholder="Escribe aqui tu recomendación"></textarea>
 <button class="botonP" id= "botonP">Publicar</button>
+<button class="edit-act" id="edit-act">Guardar cambios</button>
 </form>
 <div id= "container"></div>
 `;
@@ -37,8 +37,16 @@ export const showMuro = function () {
        <h4>${tasks.userName}</h4>
        <h5>${tasks.mensaje1}</h5>
        <div class="botones">
-      <button class="botonE" id= "botonEd" data-id="${doc.id}">Editar</button>
-      <button class="botonEl" id="botonEl" data-id="${doc.id}">Eliminar</button>
+      <button class="botonE" id= "botonEd" data-id="${doc.id}">Editar
+      <span class="material-symbols-outlined">
+edit
+</span>
+      </button>
+      <button class="botonEl" id="botonEl"data-id="${doc.id}">Eliminar
+      <span class="material-symbols-outlined">
+      delete
+      </span>
+      </button>
       </div>
       </div>
       `;
