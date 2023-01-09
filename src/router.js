@@ -22,7 +22,7 @@ export const Router = () => {
   }
 };
 // eslint-disable-next-line no-unused-vars
-// ESCUCHA EN QUE VENTANA ESTAS
 window.addEventListener('popstate', (e) => {
   Router();
 });
+// ESCUCHA EN QUE VENTANA ESTAS
