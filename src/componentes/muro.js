@@ -11,7 +11,9 @@ export const showMuro = function () {
   // console.log (currentUserInfo().displayName)
   const templatePrincipal = `
 <h3> Hola ${currentUserInfo().displayName}</h3>
+<div class="botonCerrar">
 <button class="inicio" id="inicio">Cerrar sesión</button>
+</div>
 <form id="task-form" class="containerComents">
 <textarea name="mensaje" id="mensaje1" class="mensaje1" cols="50" rows="10" placeholder="Escribe aqui tu recomendación"></textarea>
 <button class="botonP" id= "botonP">Publicar</button>
