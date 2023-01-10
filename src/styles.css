@@ -194,13 +194,15 @@ margin-left: 30%;
     box-shadow: 3px 3px 10px 10px yellow;
   }
  .botonP{
-    background-color: rgba(255, 255, 0, 0.911);
+    background-color:rgba(255, 255, 0, 0.911);
     padding: 5px;
     border-radius: 7px;
     text-align: center;
     align-items: center;
     font-weight: bold;
     filter: brightness(90%);
+    cursor: pointer;
+    margin-bottom: 10px;
 } 
 .botonP:hover {
     filter: brightness(100%);
@@ -208,13 +210,15 @@ margin-left: 30%;
 .comentarios{
     margin-top: 10px;
     display: grid;
-grid-template-columns: 100 px;
-grid-template-rows: 50 px;
-gap : 10px;
-background-color: gainsboro;
-color :black;
-width: 40%;
-margin-left: 30%;
+    grid-template-columns: 100 px;
+    grid-template-rows: 50 px;
+    gap : 10px;
+    background-color: gainsboro;
+    color :black;
+    width: 40%;
+    margin-left: 30%;
+    border-radius: 7px;
+    padding: 10px 10px 7px 7px;
 }
 .botones{
     display: flex;
@@ -231,6 +235,11 @@ margin-left: 30%;
     border: none;
     font-weight: bold;
     filter: brightness(90%);
+    cursor: pointer;
+    padding: 10px;
+}
+.hidden{
+    display: none !important;
 }
 .botonE:hover {
     filter: brightness(100%);
@@ -245,6 +254,8 @@ margin-left: 30%;
     border: none;
     font-weight: bold;
     filter: brightness(90%);
+    cursor: pointer;
+    padding: 10px;
 }
 .botonEl:hover {
     filter: brightness(100%);
@@ -273,13 +284,21 @@ h4{
     background-color: gainsboro;
     
 }
-h5 {
+ .texto{
     color: black;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     border-radius: 5px;
 }
-
+.edit-act {
+    border-radius: 7px;
+    background-color: rgba(255, 255, 0, 0.911);
+    cursor: pointer;
+    filter: brightness(90%);
+}
+.edit-act:hover {
+    filter: brightness(100%);
+  }
 @media only screen and (max-width: 991px) {
     /* For mobile phones: */
     .wrapper{

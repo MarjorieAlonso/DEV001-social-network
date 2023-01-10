@@ -3,7 +3,7 @@
 import { onSnapshot, collection } from 'firebase/firestore';
 import { currentUserInfo } from '../lib/auth.js';
 import {
-  saveTask, db, deleteTask, getTask, updateTask,
+  saveTask, db, deleteTask, getTask, updateTask,auth
 } from '../lib/firebase.js';
 // eslint-disable-next-line func-names
 // eslint-disable-next-line func-names
@@ -37,16 +37,14 @@ export const showMuro = function () {
       html += `
       <div class= "comentarios">
        <h4>${tasks.userName}</h4>
-       <h5>${tasks.mensaje1}</h5>
+       <p class= "texto">${tasks.mensaje1}</p>
        <div class="botones">
-      <button class="botonE" id= "botonEd" data-id="${doc.id}">Editar
+       <button class="botonE ${auth.currentUser.uid === tasks.uid ? '' : 'hidden'}"  id="botonEd" data-id="${doc.id}">Editar
       <span class="material-symbols-outlined">
-edit
-</span>
+      </span>
       </button>
-      <button class="botonEl" id="botonEl"data-id="${doc.id}">Eliminar
+      <button class="botonEl ${auth.currentUser.uid === tasks.uid ? '' : 'hidden'}" id="botonEl" data-id="${doc.id}">Eliminar
       <span class="material-symbols-outlined">
-      delete
       </span>
       </button>
       </div>
@@ -75,7 +73,8 @@ edit
         // editStatus = true;
         id = doc.id;
         const editActualizar = document.getElementById('edit-act');
-        editActualizar.addEventListener('click', () => {
+        editActualizar.addEventListener('click', (e) => {
+          e.preventDefault();
           updateTask(id, { mensaje1: taskForm.mensaje.value });
         });
       });
