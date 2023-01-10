@@ -16,7 +16,7 @@ import { auth, signIn } from '../lib/auth.js';
 export const showLogin = function () {
   const templateFormulario = `
     <div class= "container">
-      <img src="images/claqueta.png" class="claqueta" alt="claqueta">
+      <img src="/static/images/claqueta.png" class="claqueta" alt="claqueta">
         <div class= "form">
             <div class= "form-login">
             <span class= title>Login</span>
@@ -47,7 +47,7 @@ export const showLogin = function () {
                 <a href="#" class="signup-text" id="signup">Registrarme</a>
                 <div class="buttonGoogle">
                 <button class="registroGoogle" id="botonGoogle">
-                <img src="images/logogoogle.jpeg" class="logoGoogle">Entrar con Google</button>
+                <img src="/static/images/logogoogle.jpeg" class="logoGoogle">Entrar con Google</button>
                 </div>
                </span>
               </div>
