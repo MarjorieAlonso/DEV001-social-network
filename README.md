@@ -32,7 +32,7 @@ Los usuarios de Recomiendame la movie , necesito tener las opciones de poder ing
 
 - [ ] **Prototipo de alta fidelidad.**
 
-![prototipo de baja fidelidad]
+![prototipo de alta fidelidad](https://github.com/MelRV/DEV001-social-network/blob/main/Social%20Network1.png)
 
 ### CSS
 
