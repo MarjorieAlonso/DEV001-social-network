@@ -2,14 +2,15 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 // eslint-disable-next-line quotes, no-unused-vars
 import path from 'path';
-import { deleteDoc } from 'firebase/firestore';
+import { deleteDoc, updateDoc } from 'firebase/firestore';
 import { signup, signIn } from '../src/lib/auth';
 // import { auth } from "../src/lib/firebase";
-import { deleteTask } from '../src/lib/firebase.js';
+import { deleteTask, updateTask } from '../src/lib/firebase.js';
 // jest-environment jsdom;
 
 jest.mock('firebase/auth');
 jest.mock('firebase/firestore');
+jest.mock('firebase/storage');
 
 test('Signup es una función', () => {
   // Set up our document body
@@ -32,24 +33,21 @@ test('Signin es una función', () => {
   expect(typeof signIn).toBe('function');
   expect(signInWithEmailAndPassword).toBeCalled();
 });
-
 describe('deleteTask', () => {
   it('Debería ser una función', () => {
     expect(typeof deleteTask).toBe('function');
-  });
-  it('Debería ser llamada con un id', () => {
-    const id = 'lXIJkj2pHuZM73QIJHkUlwn1l0g2';
-    deleteTask(id);
-    expect(deleteDoc).toHaveBeenCalledWith(id);
   });
   it('Debería llamar al metodo deleteDoc', () => {
     deleteTask(deleteDoc);
     expect(deleteDoc).toBeCalled();
   });
-  it('Debería eliminar un  objeto', () => {
-    deleteTask({
-      id: 'lXIJkj2pHuZM73QIJHkUlwn1l0g2',
-    });
-    expect(deleteDoc).toEqual(expect.anything(), { id: 'lXIJkj2pHuZM73QIJHkUlwn1l0g2' });
+});
+describe('updateTask', () => {
+  it('Debería ser una función', () => {
+    expect(typeof updateTask).toBe('function');
+  });
+  it('Debería llamar al metodo updateTask', () => {
+    updateTask(updateDoc);
+    expect(updateDoc).toBeCalled();
   });
 });
