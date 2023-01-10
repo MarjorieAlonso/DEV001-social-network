@@ -22,11 +22,17 @@ Recomiendame la movie es una plataforma, tanto para pc como para móviles, que b
 
 ## 3. Historias de usuarios
 
-Los usuarios de Recomiendame la movie , necesito tener las opciones de poder ingresar en caso de estar registrado, o registrarme en la pagina .
+Los usuarios de Recomiendame la movie , necesito tener las opciones de poder ingresar en caso de estar registrado, o registrarme en la pagina.
 
 ### Prototipos
 
+ - [ ] **Prototipo de baja fidelidad.**
+
 ![prototipo de baja fidelidad](https://github.com/MelRV/DEV001-social-network/blob/main/WhatsApp%20Image%202023-01-09%20at%2017.37.25%20(2).jpeg)
+
+- [ ] **Prototipo de alta fidelidad.**
+
+![prototipo de baja fidelidad]
 
 ### CSS
 
