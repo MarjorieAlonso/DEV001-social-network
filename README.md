@@ -27,6 +27,7 @@ Recomiendame la movie es una plataforma, tanto para pc como para móviles, que b
  - [ ] **Prototipo de baja fidelidad.**
 
 ![prototipo de baja fidelidad](https://github.com/MelRV/DEV001-social-network/blob/main/WhatsApp%20Image%202023-01-09%20at%2017.37.25%20(2).jpeg)
+![prototipo de baja fidelidad](https://github.com/MelRV/DEV001-social-network/blob/main/WhatsApp%20Image%202023-01-09%20at%2017.37.25.jpeg)
 
 - [ ] **Prototipo de alta fidelidad.**
 
