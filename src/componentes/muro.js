@@ -3,7 +3,7 @@
 import { onSnapshot, collection } from 'firebase/firestore';
 import { currentUserInfo } from '../lib/auth.js';
 import {
-  saveTask, db, deleteTask, getTask, updateTask,auth
+  saveTask, db, deleteTask, getTask, updateTask, auth,
 } from '../lib/firebase.js';
 // eslint-disable-next-line func-names
 // eslint-disable-next-line func-names
