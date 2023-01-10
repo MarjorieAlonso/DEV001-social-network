@@ -19,8 +19,7 @@ Recomiendame la movie es una plataforma, tanto para pc como para móviles, que b
 
 * [ ] Los usuarios de Recomiendame la movie , necesito tener las opciones de poder ingresar en caso de estar registrado, o registrarme en la pagina.
 * [ ] Al no estar registrado en la pagina, el usuario tiene que tener la opción , tanto de registrarse con nombre de usuario y contraseña, como la opcion de entrar con google.
-* [ ] Al ya estar registrado, el usuario puede entrar directamente al muro y postear sus comentarios.
-* [ ] 
+* [ ] Al ya estar registrado, el usuario puede entrar directamente al muro y postear sus comentarios. 
 
 
 ### Prototipos
