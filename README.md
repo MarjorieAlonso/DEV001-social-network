@@ -26,13 +26,7 @@ Los usuarios de Recomiendame la movie , necesito tener las opciones de poder ing
 
 ### Prototipos
 
-- [ ] **Uso de HTML semántico**
-
-  <details><summary>Links</summary><p>
-
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
+![prototipo de baja fidelidad](https://github.com/MelRV/DEV001-social-network/blob/main/WhatsApp%20Image%202023-01-09%20at%2017.37.25%20(2).jpeg)
 
 ### CSS
 
