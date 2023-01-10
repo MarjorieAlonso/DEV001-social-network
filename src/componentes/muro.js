@@ -43,7 +43,7 @@ export const showMuro = function () {
       <span class="material-symbols-outlined">
       </span>
       </button>
-      <button class="botonEl" id="botonEl"data-id="${doc.id}">Eliminar
+      <button class="botonEl ${auth.currentUser.uid === tasks.uid ? '' : 'hidden'}" id="botonEl" data-id="${doc.id}">Eliminar
       <span class="material-symbols-outlined">
       </span>
       </button>
