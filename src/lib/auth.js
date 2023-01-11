@@ -3,7 +3,7 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 // eslint-disable-next-line import/no-unresolved, import/no-cycle
-import { showMuro } from '../Componentes/muro.js';
+import { showMuro } from '../componentes/muro.js';
 import { app } from './firebase.js';
 
 // REGISTARME
