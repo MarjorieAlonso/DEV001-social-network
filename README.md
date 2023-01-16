@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 # Recomiendame la movie 
 
 ## 1. Preámbulo
 
 Todo el mundo que esta conectado a internet ya  sabe lo que es una red social, pero aca se lo explicaremos brevemente, una red social es una comunidad donde puedes compartir distintos ámbitos de tu vida o de tu preferencias en internet.
-=======
+
 # Creando una Red Social
 
 ## Índice
@@ -12,12 +12,12 @@ Todo el mundo que esta conectado a internet ya  sabe lo que es una red social, p
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Historias de usuarios](#3-historias-de-usuarios)
-* [4. Para considerar Project Feedback](#4-para-considerar-project-feedback)
+
 
 ## 1. Preámbulo
 
 Todo el mundo que esta conectado a internet ya sabe lo que es una red social, pero aca se lo explicaremos brevemente, una red social es una comunidad donde puedes compartir distintos ámbitos de tu vida o de tu preferencias en internet.
->>>>>>> f3e38508575cc38d054905bd073c0ddc7d034a85
+
 
 ## 2. Resumen del proyecto
 
@@ -68,12 +68,4 @@ Al ya estar registrado, el usuario puede entrar directamente al muro y postear s
 ![prototipo de alta fidelidad](https://github.com/MelRV/DEV001-social-network/blob/main/iPhone%2014%20-%202.png)
 
 
-## 4. Para considerar Project Feedback
 
- * [ ] Tiene una interfaz que cumple los criterios mínimos con al menos 3 Historias de Usuario.
- * [ ] El proyecto será entregado incluyendo pruebas unitarias que cubren un mínimo del 70% de statements, functions, lines y branches.
- * [ ] El proyecto será entregado libre de errores de eslint (los warnings están ok).
- * [ ] El proyecto será entregado subiendo tu código a GitHub.
- * [ ] La interfaz será "desplegada" usando un servicio de hosting o Github Pages.
- * [ ] El README contiene una definición del producto e Historias de Usuario.
->>>>>>> f3e38508575cc38d054905bd073c0ddc7d034a85
